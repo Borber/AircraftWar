@@ -1,7 +1,10 @@
 package com.borber.toolkits;
 
-public class Chack {
+import java.sql.Connection;
+
+public class Check {
     public static boolean checkName(String name){
+
         return false;
     }
 

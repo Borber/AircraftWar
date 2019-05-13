@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import static com.borber.globalConstant.For_Game.PLANE_OBJ;
-import static com.borber.globalConstant.For_Game.gameStopedFrame;
+import static com.borber.globalConstant.For_Game.SCORE;
 import static com.borber.globalConstant.For_UI.*;
 
 /**
@@ -15,6 +15,8 @@ import static com.borber.globalConstant.For_UI.*;
 public class GameFrameBeta extends Frame {
 
     public GameFrameBeta(){
+        SCORE = 0;
+        PLANE_OBJ.setLife(3);
         initComponents();
     }
 
@@ -39,9 +41,9 @@ public class GameFrameBeta extends Frame {
         }
     }
 
-    public void initComponents(){
+    private void initComponents(){
         setUndecorated(true);
-        setVisible(true);
+        setVisible(false);
         setSize(GAME_WIDTH,GAME_HEIGHT);
         setLocationRelativeTo(getOwner());
         listeners();
@@ -49,12 +51,10 @@ public class GameFrameBeta extends Frame {
     }
 
     private void listeners(){
-        this.addKeyListener(new KeyAdapter() {
+        this.addMouseListener(new MouseAdapter() {
             @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-                    System.exit(0);
-                }
+            public void mouseExited(MouseEvent e) {
+                new GameStopedFrame();
             }
         });
         this.addMouseMotionListener(new MouseAdapter() {
@@ -69,7 +69,7 @@ public class GameFrameBeta extends Frame {
             public void mouseClicked(MouseEvent e) {
                 if(e.getButton() == MouseEvent.BUTTON3){
                     setVisible(false);
-                    gameStopedFrame = new GameStopedFrame();
+                    new GameStopedFrame();
                 }
             }
         });

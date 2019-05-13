@@ -12,9 +12,10 @@ new FormModel {
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"background": &Color0 new java.awt.Color( 255, 255, 255, 255 )
 				"horizontalAlignment": 0
-				"foreground": &Color1 new java.awt.Color( 153, 153, 153, 255 )
+				"foreground": new java.awt.Color( 153, 153, 153, 255 )
 				"text": "Username"
 				"columns": 12
+				"font": new java.awt.Font( "Fira Code Medium", 1, 12 )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "nameTextFieldFocusGained", true ) )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "nameTextFieldFocusLost", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -25,12 +26,13 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JPasswordField" ) {
 				name: "passwordField"
-				"background": &Color2 new java.awt.Color( 255, 255, 255, 255 )
+				"background": &Color1 new java.awt.Color( 255, 255, 255, 255 )
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"text": "Password"
 				"horizontalAlignment": 0
 				"foreground": new java.awt.Color( 153, 153, 153, 255 )
 				"columns": 16
+				"font": new java.awt.Font( "Fira Code Medium", 1, 16 )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "passwordFieldFocusGained", true ) )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "passwordFieldFocusLost", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -41,12 +43,13 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JPasswordField" ) {
 				name: "passwordRepeatField"
-				"background": #Color2
+				"background": #Color1
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"text": "Password"
 				"horizontalAlignment": 0
 				"foreground": new java.awt.Color( 153, 153, 153, 255 )
 				"columns": 16
+				"font": new java.awt.Font( "Fira Code Medium", 1, 16 )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "passwordRepeatFieldFocusLost", true ) )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "passwordRepeatFieldFocusGained", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -60,7 +63,8 @@ new FormModel {
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"background": #Color0
 				"horizontalAlignment": 0
-				"foreground": #Color1
+				"foreground": new java.awt.Color( 0, 0, 0, 255 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "emailTextFieldMouseClicked", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 135
 				"height": 30
@@ -77,24 +81,212 @@ new FormModel {
 				"y": 330
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "emailCombox"
+				name: "conCombox"
 				"model": new javax.swing.DefaultComboBoxModel {
-					selectedItem: "China"
-					addElement( "China" )
-					addElement( "USA" )
-					addElement( "UK" )
+					selectedItem: "Angola "
+					addElement( "Angola " )
+					addElement( "Afghanistan " )
+					addElement( "Albania " )
+					addElement( "Algeria " )
+					addElement( "Andorra " )
+					addElement( "Anguilla " )
+					addElement( "Antigua and Barbuda " )
+					addElement( "Argentina " )
+					addElement( "Armenia " )
+					addElement( "Ascension " )
+					addElement( "Australia " )
+					addElement( "Austria \t\t\t" )
+					addElement( "Azerbaijan  " )
+					addElement( "Bahamas " )
+					addElement( "Bahrain " )
+					addElement( "Bangladesh " )
+					addElement( "Barbados " )
+					addElement( "Belarus  " )
+					addElement( "Belgium  " )
+					addElement( "Belize  " )
+					addElement( "Benin  " )
+					addElement( "Bermuda Is.  " )
+					addElement( "Bolivia  " )
+					addElement( "Botswana  " )
+					addElement( "Brazil " )
+					addElement( "Brunei " )
+					addElement( "Bulgaria " )
+					addElement( "Burkina-faso " )
+					addElement( "Burma " )
+					addElement( "Burundi  " )
+					addElement( "Cameroon " )
+					addElement( "Canada  " )
+					addElement( "Cayman Is." )
+					addElement( "Central African Republic " )
+					addElement( "Chad " )
+					addElement( "Chile " )
+					addElement( "China " )
+					addElement( "Colombia " )
+					addElement( "Congo " )
+					addElement( "Cook Is." )
+					addElement( "Costa Rica " )
+					addElement( "Cuba " )
+					addElement( "Cyprus " )
+					addElement( "Czech Republic " )
+					addElement( "Denmark " )
+					addElement( "Djibouti " )
+					addElement( "Dominica Rep.  " )
+					addElement( "Ecuador " )
+					addElement( "Egypt " )
+					addElement( "EI Salvador  " )
+					addElement( "Estonia " )
+					addElement( "Ethiopia " )
+					addElement( "Fiji  " )
+					addElement( "Finland " )
+					addElement( "France " )
+					addElement( "French Guiana " )
+					addElement( "Gabon " )
+					addElement( "Gambia " )
+					addElement( "Georgia " )
+					addElement( "Germany  " )
+					addElement( "Ghana  " )
+					addElement( "Gibraltar " )
+					addElement( "Greece " )
+					addElement( "Grenada " )
+					addElement( "Guam  " )
+					addElement( "Guatemala " )
+					addElement( "Guinea " )
+					addElement( "Guyana " )
+					addElement( "Haiti " )
+					addElement( "Honduras  " )
+					addElement( "Hongkong " )
+					addElement( "Hungary " )
+					addElement( "Iceland " )
+					addElement( "India " )
+					addElement( "Indonesia  " )
+					addElement( "Iran " )
+					addElement( "Iraq " )
+					addElement( "Ireland  " )
+					addElement( "Israel " )
+					addElement( "Italy " )
+					addElement( "Ivory Coast " )
+					addElement( "Jamaica " )
+					addElement( "Japan " )
+					addElement( "Jordan  " )
+					addElement( "Cambodia  " )
+					addElement( "Kazakstan  " )
+					addElement( "Kenya  " )
+					addElement( "Korea " )
+					addElement( "Kuwait " )
+					addElement( "Kyrgyzstan " )
+					addElement( "Laos " )
+					addElement( "Latvia " )
+					addElement( "Lebanon " )
+					addElement( "Lesotho " )
+					addElement( "Liberia  " )
+					addElement( "Libya " )
+					addElement( "Liechtenstein " )
+					addElement( "Lithuania " )
+					addElement( "Luxembourg " )
+					addElement( "Macao " )
+					addElement( "Madagascar " )
+					addElement( "Malawi " )
+					addElement( "Malaysia " )
+					addElement( "Maldives " )
+					addElement( "Mali " )
+					addElement( "Malta " )
+					addElement( "Mariana Is " )
+					addElement( "Martinique " )
+					addElement( "Mauritius " )
+					addElement( "Mexico " )
+					addElement( "Moldova, Republic of " )
+					addElement( "Monaco " )
+					addElement( "Mongolia " )
+					addElement( "Montserrat Is " )
+					addElement( "Morocco " )
+					addElement( "Mozambique " )
+					addElement( "Namibia " )
+					addElement( "Nauru " )
+					addElement( "Nepal " )
+					addElement( "Netheriands Antilles " )
+					addElement( "Netherlands " )
+					addElement( "New Zealand " )
+					addElement( "Nicaragua " )
+					addElement( "Niger  " )
+					addElement( "Nigeria " )
+					addElement( "North Korea " )
+					addElement( "Norway " )
+					addElement( "Oman " )
+					addElement( "Pakistan  " )
+					addElement( "Panama " )
+					addElement( "Papua New Cuinea " )
+					addElement( "Paraguay  " )
+					addElement( "Peru " )
+					addElement( "Philippines " )
+					addElement( "Poland " )
+					addElement( "French Polynesia " )
+					addElement( "Portugal  " )
+					addElement( "Puerto Rico " )
+					addElement( "Qatar  " )
+					addElement( "Reunion " )
+					addElement( "Romania " )
+					addElement( "Russia " )
+					addElement( "Saint Lueia  " )
+					addElement( "Saint Vincent  " )
+					addElement( "Samoa Eastern  " )
+					addElement( "Samoa Western  " )
+					addElement( "San Marino  " )
+					addElement( "Sao Tome and Principe " )
+					addElement( "Saudi Arabia " )
+					addElement( "Senegal " )
+					addElement( "Seychelles " )
+					addElement( "Sierra Leone  " )
+					addElement( "Singapore  " )
+					addElement( "Slovakia " )
+					addElement( "Slovenia " )
+					addElement( "Solomon Is " )
+					addElement( "Somali " )
+					addElement( "South Africa " )
+					addElement( "Spain  " )
+					addElement( "Sri Lanka  " )
+					addElement( "St.Lucia  " )
+					addElement( "St.Vincent " )
+					addElement( "Sudan " )
+					addElement( "Suriname " )
+					addElement( "Swaziland " )
+					addElement( "Sweden" )
+					addElement( "Switzerland " )
+					addElement( "Syria  " )
+					addElement( "Tajikstan " )
+					addElement( "Tanzania " )
+					addElement( "Thailand " )
+					addElement( "Togo " )
+					addElement( "Tonga " )
+					addElement( "Trinidad and Tobago " )
+					addElement( "Tunisia " )
+					addElement( "Turkey " )
+					addElement( "Turkmenistan " )
+					addElement( "Uganda " )
+					addElement( "Ukraine " )
+					addElement( "United Arab Emirates " )
+					addElement( "United Kiongdom " )
+					addElement( "United States of America " )
+					addElement( "Uruguay " )
+					addElement( "Uzbekistan " )
+					addElement( "Venezuela " )
+					addElement( "Vietnam " )
+					addElement( "Yemen " )
+					addElement( "Yugoslavia  " )
+					addElement( "Zimbabwe " )
+					addElement( "Zaire " )
+					addElement( "Zambia " )
 				}
-				"background": &Color3 new java.awt.Color( 255, 255, 255, 255 )
+				"background": &Color2 new java.awt.Color( 255, 255, 255, 255 )
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
-				"foreground": &Color4 new java.awt.Color( 0, 0, 0, 255 )
+				"foreground": &Color3 new java.awt.Color( 0, 0, 0, 255 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 185
-				"y": 490
+				"y": 500
 				"width": 115
 				"height": 30
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
-				name: "conCombox"
+				name: "emailCombox"
 				"model": new javax.swing.DefaultComboBoxModel {
 					selectedItem: "gmail.com"
 					addElement( "gmail.com" )
@@ -102,9 +294,9 @@ new FormModel {
 					addElement( "foxmail.com" )
 					addElement( "163.com" )
 				}
-				"background": #Color3
+				"background": #Color2
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
-				"foreground": #Color4
+				"foreground": #Color3
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 85
 				"height": 30
@@ -112,7 +304,7 @@ new FormModel {
 				"y": 325
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label3"
+				name: "code"
 				"text": "+86"
 				"font": new java.awt.Font( "Fira Code Medium", 1, 16 )
 				"background": new java.awt.Color( 0, 0, 0, 255 )
@@ -129,6 +321,8 @@ new FormModel {
 				"font": &Font0 new java.awt.Font( "Fira Code Medium", 1, 14 )
 				"foreground": new java.awt.Color( 153, 153, 153, 255 )
 				"background": new java.awt.Color( 255, 255, 255, 255 )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "telephoneNum1FocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "telephoneNum1FocusLost", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 145
 				"y": 400
@@ -137,13 +331,15 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 				name: "telephoneNum2"
-				"background": &Color5 new java.awt.Color( 255, 255, 255, 255 )
+				"background": &Color4 new java.awt.Color( 255, 255, 255, 255 )
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"text": "xxxx"
 				"horizontalAlignment": 0
 				"font": #Font0
 				"foreground": new java.awt.Color( 153, 153, 153, 255 )
 				"columns": 4
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "telephoneNum2FocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "telephoneNum2FocusLost", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 60
 				"height": 30
@@ -152,13 +348,15 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 				name: "telephoneNum3"
-				"background": #Color5
+				"background": #Color4
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"text": "xxxx"
 				"horizontalAlignment": 0
 				"font": #Font0
 				"foreground": new java.awt.Color( 153, 153, 153, 255 )
 				"columns": 4
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "telephoneNum3FocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "telephoneNum3FocusLost", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 60
 				"height": 30
@@ -169,7 +367,7 @@ new FormModel {
 				name: "telephoneSign"
 				"text": "-"
 				"font": &Font1 new java.awt.Font( "Fira Code Medium", 1, 14 )
-				"foreground": &Color6 new java.awt.Color( 51, 51, 51, 255 )
+				"foreground": &Color5 new java.awt.Color( 51, 51, 51, 255 )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 210
 				"y": 405
@@ -178,7 +376,7 @@ new FormModel {
 				name: "telephoneSign2"
 				"text": "-"
 				"font": #Font1
-				"foreground": #Color6
+				"foreground": #Color5
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 8
 				"height": 18
@@ -188,6 +386,7 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "submitButtonImg"
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/submitImg.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "submitButtonImgMouseClicked", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 145
 				"y": 605
@@ -204,6 +403,7 @@ new FormModel {
 				name: "backgroundImg"
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/bg.png" )
 				"font": new java.awt.Font( "Fira Code Medium", 1, 14 )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "backgroundImgMouseClicked", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 0
 				"y": 0

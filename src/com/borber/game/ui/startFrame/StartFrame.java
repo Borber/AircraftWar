@@ -7,6 +7,7 @@ package com.borber.game.ui.startFrame;
 import com.borber.game.ui.RegisterFrame;
 import com.borber.game.ui.gameFrame.GameFrameBeta;
 import com.borber.globalConstant.For_UI;
+import com.borber.toolkits.SQL_Command;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,8 +29,14 @@ public class StartFrame extends JFrame {
     }
 
     private void startLabelMouseClicked(MouseEvent e) {
-        gameFrameBeta = new GameFrameBeta();
-        setVisible(false);
+        boolean OK = false;
+        OK = SQL_Command.SignIn(nameTextField.getText(),new String(passwordField.getPassword()));
+        if(OK){
+            gameFrameBeta.setVisible(true);
+            setVisible(false);
+        }else {
+            System.out.println("登陆失败");
+        }
     }
 
     private void exitLabelMouseClicked(MouseEvent e) {

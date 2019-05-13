@@ -94,7 +94,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "authorButton"
-				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/pre/C.png" )
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/pre/author.png" )
 				"disabledIcon": new com.jformdesigner.model.SwingIcon( 0, "/img/pre/author.png" )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 410

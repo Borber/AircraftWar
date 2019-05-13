@@ -19,7 +19,8 @@ public class GameStopedFrame extends JFrame {
     }
 
     private void restartButtonMouseClicked(MouseEvent e) {
-        System.out.println("未完成");
+        gameFrameBeta = new GameFrameBeta();
+        gameFrameBeta.setVisible(true);
     }
 
     private void continueButtonMouseClicked(MouseEvent e) {
