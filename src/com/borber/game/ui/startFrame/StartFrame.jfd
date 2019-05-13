@@ -1,0 +1,119 @@
+JFDML JFormDesigner: "7.0.0.0.170" Java: "1.8.0_202-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"undecorated": true
+			"visible": true
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "formattedTextField1"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 225
+				"y": 30
+				"width": 0
+				"height": 0
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "startLabel"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/stratImg.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "startLabelMouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 165
+				"y": 485
+			} )
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "nameTextField"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"horizontalAlignment": 0
+				"font": new java.awt.Font( "Fira Code Medium", 1, 14 )
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				"text": "Username"
+				"foreground": new java.awt.Color( 153, 153, 153, 255 )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "nameTextFieldFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "nameTextFieldFocusLost", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 125
+				"y": 285
+				"width": 265
+				"height": 30
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "passwordField"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"horizontalAlignment": 0
+				"font": new java.awt.Font( "Fira Code Medium", 1, 16 )
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				"text": "Password"
+				"foreground": new java.awt.Color( 153, 153, 153, 255 )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "passwordFieldFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "passwordFieldFocusLost", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 125
+				"y": 380
+				"width": 260
+				"height": 30
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "nameTextFieldImg"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/blankImg.png" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 105
+				"y": 280
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "registerButtonImg"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/registerImg.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "registerButtonImgMouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 165
+				"y": 575
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "passwordFieldImg"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/blankImg.png" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 105
+				"y": 375
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "exitLabel"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/exitImg.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "exitLabelMouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 165
+				"y": 655
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "adminLoginImg"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/admin.png" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 30
+				"y": 770
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "authorButton"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/pre/C.png" )
+				"disabledIcon": new com.jformdesigner.model.SwingIcon( 0, "/img/pre/author.png" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 410
+				"y": 775
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "background"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/bg.png" )
+				"background": new java.awt.Color( 255, 255, 255, 0 )
+				"verticalAlignment": 3
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "backgroundMouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 0
+				"y": 0
+				"height": 850
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 260, 5 )
+			"size": new java.awt.Dimension( 480, 880 )
+		} )
+	}
+}

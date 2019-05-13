@@ -1,0 +1,218 @@
+JFDML JFormDesigner: "7.0.0.0.170" Java: "1.8.0_202-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"undecorated": true
+			"visible": true
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "nameTextField"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"background": &Color0 new java.awt.Color( 255, 255, 255, 255 )
+				"horizontalAlignment": 0
+				"foreground": &Color1 new java.awt.Color( 153, 153, 153, 255 )
+				"text": "Username"
+				"columns": 12
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "nameTextFieldFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "nameTextFieldFocusLost", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 115
+				"y": 145
+				"width": 250
+				"height": 30
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "passwordField"
+				"background": &Color2 new java.awt.Color( 255, 255, 255, 255 )
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"text": "Password"
+				"horizontalAlignment": 0
+				"foreground": new java.awt.Color( 153, 153, 153, 255 )
+				"columns": 16
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "passwordFieldFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "passwordFieldFocusLost", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 115
+				"y": 205
+				"width": 250
+				"height": 30
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "passwordRepeatField"
+				"background": #Color2
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"text": "Password"
+				"horizontalAlignment": 0
+				"foreground": new java.awt.Color( 153, 153, 153, 255 )
+				"columns": 16
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "passwordRepeatFieldFocusLost", true ) )
+				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "passwordRepeatFieldFocusGained", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 250
+				"height": 30
+				"x": 115
+				"y": 260
+			} )
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "emailTextField"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"background": #Color0
+				"horizontalAlignment": 0
+				"foreground": #Color1
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 135
+				"height": 30
+				"x": 115
+				"y": 325
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "emailSign"
+				"text": "@"
+				"font": new java.awt.Font( "Fira Code Medium", 1, 16 )
+				"foreground": new java.awt.Color( 0, 0, 0, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 260
+				"y": 330
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "emailCombox"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "China"
+					addElement( "China" )
+					addElement( "USA" )
+					addElement( "UK" )
+				}
+				"background": &Color3 new java.awt.Color( 255, 255, 255, 255 )
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"foreground": &Color4 new java.awt.Color( 0, 0, 0, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 185
+				"y": 490
+				"width": 115
+				"height": 30
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "conCombox"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "gmail.com"
+					addElement( "gmail.com" )
+					addElement( "qq.com" )
+					addElement( "foxmail.com" )
+					addElement( "163.com" )
+				}
+				"background": #Color3
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"foreground": #Color4
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 85
+				"height": 30
+				"x": 280
+				"y": 325
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "+86"
+				"font": new java.awt.Font( "Fira Code Medium", 1, 16 )
+				"background": new java.awt.Color( 0, 0, 0, 255 )
+				"foreground": new java.awt.Color( 0, 0, 0, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 110
+				"y": 405
+			} )
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "telephoneNum1"
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"text": "xxx"
+				"horizontalAlignment": 0
+				"font": &Font0 new java.awt.Font( "Fira Code Medium", 1, 14 )
+				"foreground": new java.awt.Color( 153, 153, 153, 255 )
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 145
+				"y": 400
+				"width": 60
+				"height": 30
+			} )
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "telephoneNum2"
+				"background": &Color5 new java.awt.Color( 255, 255, 255, 255 )
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"text": "xxxx"
+				"horizontalAlignment": 0
+				"font": #Font0
+				"foreground": new java.awt.Color( 153, 153, 153, 255 )
+				"columns": 4
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 60
+				"height": 30
+				"x": 225
+				"y": 400
+			} )
+			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+				name: "telephoneNum3"
+				"background": #Color5
+				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+				"text": "xxxx"
+				"horizontalAlignment": 0
+				"font": #Font0
+				"foreground": new java.awt.Color( 153, 153, 153, 255 )
+				"columns": 4
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 60
+				"height": 30
+				"y": 400
+				"x": 305
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "telephoneSign"
+				"text": "-"
+				"font": &Font1 new java.awt.Font( "Fira Code Medium", 1, 14 )
+				"foreground": &Color6 new java.awt.Color( 51, 51, 51, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 210
+				"y": 405
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "telephoneSign2"
+				"text": "-"
+				"font": #Font1
+				"foreground": #Color6
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 8
+				"height": 18
+				"x": 290
+				"y": 405
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "submitButtonImg"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/submitImg.png" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 145
+				"y": 605
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "exitButtonImg"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/exitImg.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "exitButtonImgMouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 145
+				"y": 690
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "backgroundImg"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/bg.png" )
+				"font": new java.awt.Font( "Fira Code Medium", 1, 14 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 0
+				"y": 0
+				"width": 475
+				"height": 835
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 475, 865 )
+		} )
+	}
+}
