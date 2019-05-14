@@ -25,6 +25,8 @@ public class GameFrameBeta extends Frame {
         PLANE_OBJ.drawSelf(g);
         DrawItems.drawLife(g);
         DrawItems.drawScore(g);
+        DrawItems.drawEnemy(g);
+        DrawItems.drawBullet(g);
     }
     class PrintThread extends Thread {
         @Override

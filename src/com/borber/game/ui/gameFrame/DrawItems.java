@@ -1,5 +1,6 @@
 package com.borber.game.ui.gameFrame;
 
+import com.borber.game.obj.BulletObj;
 import com.borber.toolkits.GameUtil;
 
 import java.awt.*;
@@ -39,5 +40,39 @@ public class DrawItems {
     public static void drawBackGround(Graphics g){
         BG_ONE.drawSelf(g);
         BG_TWO.drawSelf(g);
+
+        // 时间的处理
+
+        ++TIME;
+        if(TIME % BULLETSPEED == 0){
+            for (int i = 0;i < BULLETN;++i){
+                if(!BULLET_SIGN[i]){
+                    BULLET_SIGN[i] = true;
+                    BULLET_OBJ[i] = new BulletObj();
+                    break;
+                }
+            }
+        }
+    }
+    public static void drawEnemy(Graphics g){
+        for(int i = 0;i < EnemyN;++i){
+            if(ENEMY_SGIN[i] && ENEMY_OBJ[i].die){
+                ENEMY_SGIN[i] = false;
+            }
+            if(ENEMY_SGIN[i]){
+                ENEMY_OBJ[i].drawSelf(g);
+            }
+        }
+    }
+
+    public static void drawBullet(Graphics g){
+        for (int i = 0; i < BULLETN; ++i) {
+            if(BULLET_SIGN[i] && BULLET_OBJ[i].die){
+                BULLET_SIGN[i] = false;
+            }
+            if(BULLET_SIGN[i]){
+                BULLET_OBJ[i].drawSelf(g);
+            }
+        }
     }
 }

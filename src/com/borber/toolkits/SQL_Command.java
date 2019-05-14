@@ -1,8 +1,15 @@
 package com.borber.toolkits;
 
+
+import com.borber.globalConstant.For_Game;
+
 import javax.swing.*;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import static com.borber.globalConstant.For_Game.lastLoginTime;
+import static com.borber.globalConstant.For_Game.userID;
 import static com.borber.globalConstant.For_SQL.*;
 
 public class SQL_Command {
@@ -21,15 +28,15 @@ public class SQL_Command {
         return false;
     }
     public static boolean SignUp(String name,String password,String email,String telephone,String country){
-        int ID = 0;
+        int IDN = 0;
         try {
             PST = CONN.prepareStatement(GetLastID_SQL);
             RS = PST.executeQuery();
             if(RS.next()){
-                ID = RS.getInt(1) + 1;
+                IDN = RS.getInt(1) + 1;
             }
             PST = CONN.prepareStatement(AddUser_SQL);
-            PST.setInt(1,ID);
+            PST.setInt(1,IDN);
             PST.setString(2,name);
             PST.setString(3,password);
             PST.setString(4,email);
@@ -45,6 +52,25 @@ public class SQL_Command {
         return false;
     }
 
+    private static void loginTime(){
+        try {
+            PST = CONN.prepareStatement(loginTime_SQL);
+            PST.setInt(1,userID);
+            Date d = new Date();
+            SimpleDateFormat S = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String Time = S.format(d.getTime());
+            PST.setString(2,Time);
+            int n = PST.executeUpdate();
+            if(n > 0){
+                System.out.println("时间上传成功");
+            }else {
+                System.out.println("失败");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static boolean SignIn(String name,String password){
         try {
             PST = CONN.prepareStatement(SignIn_SQL);
@@ -52,6 +78,14 @@ public class SQL_Command {
             PST.setString(2,password);
             RS = PST.executeQuery();
             if(RS.next()){
+                For_Game.userID = RS.getInt(1);
+                PST = CONN.prepareStatement(lastLoginTime_SQL);
+                PST.setInt(1,For_Game.userID);
+                RS = PST.executeQuery();
+                if(RS.next()){
+                    lastLoginTime = RS.getString(1);
+                }
+                loginTime();
                 return true;
             }
         } catch (SQLException e) {

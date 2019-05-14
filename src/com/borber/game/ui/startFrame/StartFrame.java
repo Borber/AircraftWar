@@ -17,6 +17,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import static com.borber.globalConstant.For_Game.gameFrameBeta;
+import static com.borber.globalConstant.For_Game.lastLoginTime;
 
 /**
  * @author BORBER
@@ -34,6 +35,7 @@ public class StartFrame extends JFrame {
         OK = SQL_Command.SignIn(nameTextField.getText(),new String(passwordField.getPassword()));
         if(OK){
             gameFrameBeta.setVisible(true);
+            System.out.println(lastLoginTime);
             setVisible(false);
         }else {
             System.out.println("登陆失败");

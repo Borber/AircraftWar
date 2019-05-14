@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class ObjFather {
     int x,y,speed,width,height,life,level;
-    boolean die;
+    public boolean die;
     Image body;
     public ObjFather(){
 
@@ -17,6 +17,7 @@ public class ObjFather {
         speed = 0;
         width = 0;
         height = 0;
+        die = true;
     }
     public void drawSelf(Graphics g){
         g.drawImage(body,x,y,null);
