@@ -16,7 +16,7 @@ public class DrawItems {
 
     public static void drawScore(Graphics g){
         int n = SCORE;
-        
+        ++SCORE;
         Image num;
         if(n == 0){
             num = GameUtil.getImage("img/num/0.png");

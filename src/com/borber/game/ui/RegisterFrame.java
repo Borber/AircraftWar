@@ -8,6 +8,8 @@ import com.borber.game.ui.startFrame.StartFrame;
 import com.borber.globalConstant.For_UI;
 import com.borber.toolkits.JTextFieldLimit;
 import com.borber.toolkits.SQL_Command;
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+import sun.security.util.Password;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -21,6 +23,7 @@ public class RegisterFrame extends JFrame {
     public RegisterFrame() {
         initComponents();
         backgroundImg.requestFocus();
+
     }
 
     private void exitButtonImgMouseClicked(MouseEvent e) {
@@ -30,11 +33,12 @@ public class RegisterFrame extends JFrame {
 
     private void nameTextFieldFocusGained(FocusEvent e) {
         if(nameTextField.getText().equals(For_UI.HINT_TEXT)){
+            nameTextField.setDocument(new JTextFieldLimit(12));
             nameTextField.setText("");
             nameTextField.setForeground(Color.BLACK);
-
-            nameTextField.setDocument(new JTextFieldLimit(12));
         }
+        userSign.setVisible(false);
+        userSign2.setVisible(false);
     }
 
     private void nameTextFieldFocusLost(FocusEvent e) {
@@ -42,15 +46,21 @@ public class RegisterFrame extends JFrame {
             nameTextField.setText(For_UI.HINT_TEXT);
             nameTextField.setForeground(new Color(153, 153, 153));
         }
+        userOK = SQL_Command.userCheck(nameTextField.getText());
+        if(userOK){
+            userSign.setVisible(true);
+        }else {
+            userSign2.setVisible(true);
+        }
     }
 
     private void passwordFieldFocusGained(FocusEvent e) {
         if(new String(passwordField.getPassword()).equals(For_UI.HINT_PASSWORD_TEXT)){
+            passwordField.setDocument(new JTextFieldLimit(20));
             passwordField.setText("");
             passwordField.setForeground(Color.BLACK);
         }
 
-        passwordField.setDocument(new JTextFieldLimit(20));
     }
 
     private void passwordFieldFocusLost(FocusEvent e) {
@@ -62,11 +72,10 @@ public class RegisterFrame extends JFrame {
 
     private void passwordRepeatFieldFocusGained(FocusEvent e) {
         if(new String(passwordRepeatField.getPassword()).equals(For_UI.HINT_PASSWORD_TEXT)){
+            passwordRepeatField.setDocument(new JTextFieldLimit(20));
             passwordRepeatField.setText("");
             passwordRepeatField.setForeground(Color.BLACK);
         }
-
-        passwordRepeatField.setDocument(new JTextFieldLimit(20));
     }
 
     private void passwordRepeatFieldFocusLost(FocusEvent e) {
@@ -75,17 +84,15 @@ public class RegisterFrame extends JFrame {
             passwordRepeatField.setText(For_UI.HINT_PASSWORD_TEXT);
             passwordRepeatField.setForeground(new Color(153, 153, 153));
         }
-        if(!Arrays.equals(passwordField.getPassword(), passwordRepeatField.getPassword())){
-            JOptionPane.showMessageDialog(null,"两次密码不匹配");
-        }
     }
 
     private void telephoneNum1FocusGained(FocusEvent e) {
         if(telephoneNum1.getText().equals("xxx")){
+            telephoneNum1.setDocument(new JTextFieldLimit(3));
             telephoneNum1.setText("");
             telephoneNum1.setForeground(Color.BLACK);
         }
-        telephoneNum1.setDocument(new JTextFieldLimit(3));
+
     }
 
     private void telephoneNum1FocusLost(FocusEvent e) {
@@ -97,10 +104,10 @@ public class RegisterFrame extends JFrame {
 
     private void telephoneNum2FocusGained(FocusEvent e) {
         if(telephoneNum2.getText().equals("xxxx")){
+            telephoneNum2.setDocument(new JTextFieldLimit(4));
             telephoneNum2.setText("");
             telephoneNum2.setForeground(Color.BLACK);
         }
-        telephoneNum2.setDocument(new JTextFieldLimit(4));
     }
 
         private void telephoneNum2FocusLost(FocusEvent e) {
@@ -112,10 +119,11 @@ public class RegisterFrame extends JFrame {
 
     private void telephoneNum3FocusGained(FocusEvent e) {
         if(telephoneNum3.getText().equals("xxxx")){
+            telephoneNum3.setDocument(new JTextFieldLimit(4));
             telephoneNum3.setText("");
             telephoneNum3.setForeground(Color.BLACK);
         }
-        telephoneNum3.setDocument(new JTextFieldLimit(4));
+
     }
 
     private void telephoneNum3FocusLost(FocusEvent e) {
@@ -130,6 +138,7 @@ public class RegisterFrame extends JFrame {
     }
 
     private void submitButtonImgMouseClicked(MouseEvent e) {
+
         boolean OK = SQL_Command.SignUp(
                 nameTextField.getText(),
                 new String(passwordField.getPassword()),
@@ -145,7 +154,32 @@ public class RegisterFrame extends JFrame {
     }
 
     private void emailTextFieldMouseClicked(MouseEvent e) {
-        emailTextField.setDocument(new JTextFieldLimit(30));
+        if(emailTextField.getText().length() == 0){
+            emailTextField.setDocument(new JTextFieldLimit(30));
+        }
+    }
+
+    private void passwordCheck(){
+        passOK = Arrays.equals(passwordField.getPassword(), passwordRepeatField.getPassword());
+        if(! new String(passwordField.getPassword()).equals(For_UI.HINT_PASSWORD_TEXT) &&
+                ! new String(passwordRepeatField.getPassword()).equals(For_UI.HINT_PASSWORD_TEXT)){
+            if(passOK){
+                passwordSign2.setVisible(true);
+                passwordSign.setVisible(false);
+            }else {
+                passwordSign.setVisible(true);
+                passwordSign2.setVisible(false);
+            }
+        }
+
+    }
+
+    private void passwordFieldKeyReleased(KeyEvent e) {
+        passwordCheck();
+    }
+
+    private void passwordRepeatFieldKeyReleased(KeyEvent e) {
+        passwordCheck();
     }
 
     private void initComponents() {
@@ -161,6 +195,10 @@ public class RegisterFrame extends JFrame {
         telephoneNum1 = new JFormattedTextField();
         telephoneNum2 = new JFormattedTextField();
         telephoneNum3 = new JFormattedTextField();
+        userSign = new JLabel();
+        userSign2 = new JLabel();
+        passwordSign = new JLabel();
+        passwordSign2 = new JLabel();
         telephoneSign = new JLabel();
         telephoneSign2 = new JLabel();
         submitButtonImg = new JLabel();
@@ -212,6 +250,12 @@ public class RegisterFrame extends JFrame {
                 passwordFieldFocusLost(e);
             }
         });
+        passwordField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                passwordFieldKeyReleased(e);
+            }
+        });
         contentPane.add(passwordField);
         passwordField.setBounds(115, 205, 250, 30);
 
@@ -231,6 +275,12 @@ public class RegisterFrame extends JFrame {
             @Override
             public void focusLost(FocusEvent e) {
                 passwordRepeatFieldFocusLost(e);
+            }
+        });
+        passwordRepeatField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                passwordRepeatFieldKeyReleased(e);
             }
         });
         contentPane.add(passwordRepeatField);
@@ -540,6 +590,30 @@ public class RegisterFrame extends JFrame {
         contentPane.add(telephoneNum3);
         telephoneNum3.setBounds(305, 400, 60, 30);
 
+        //---- userSign ----
+        userSign.setIcon(new ImageIcon(getClass().getResource("/img/sign/red.png")));
+        userSign.setVisible(false);
+        contentPane.add(userSign);
+        userSign.setBounds(new Rectangle(new Point(380, 147), userSign.getPreferredSize()));
+
+        //---- userSign2 ----
+        userSign2.setIcon(new ImageIcon(getClass().getResource("/img/sign/green.png")));
+        userSign2.setVisible(false);
+        contentPane.add(userSign2);
+        userSign2.setBounds(new Rectangle(new Point(380, 148), userSign2.getPreferredSize()));
+
+        //---- passwordSign ----
+        passwordSign.setIcon(new ImageIcon(getClass().getResource("/img/sign/red.png")));
+        passwordSign.setVisible(false);
+        contentPane.add(passwordSign);
+        passwordSign.setBounds(new Rectangle(new Point(380, 263), passwordSign.getPreferredSize()));
+
+        //---- passwordSign2 ----
+        passwordSign2.setIcon(new ImageIcon(getClass().getResource("/img/sign/green.png")));
+        passwordSign2.setVisible(false);
+        contentPane.add(passwordSign2);
+        passwordSign2.setBounds(new Rectangle(new Point(380, 265), passwordSign2.getPreferredSize()));
+
         //---- telephoneSign ----
         telephoneSign.setText("-");
         telephoneSign.setFont(new Font("Fira Code Medium", Font.BOLD, 14));
@@ -618,10 +692,16 @@ public class RegisterFrame extends JFrame {
     private JFormattedTextField telephoneNum1;
     private JFormattedTextField telephoneNum2;
     private JFormattedTextField telephoneNum3;
+    private JLabel userSign;
+    private JLabel userSign2;
+    private JLabel passwordSign;
+    private JLabel passwordSign2;
     private JLabel telephoneSign;
     private JLabel telephoneSign2;
     private JLabel submitButtonImg;
     private JLabel exitButtonImg;
     private JLabel backgroundImg;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+
+    boolean userOK,passOK;
 }

@@ -14,7 +14,8 @@ public class For_SQL {public final static String loginSQL = "select * from user 
     public final static String GetLastID_SQL = "SELECT ID FROM user ORDER BY ID DESC LIMIT 1;";
     public final static String AddUser_SQL = "insert into user value (?,?,?,?,?,?);";
     public final static String SignIn_SQL = "select ID from user where name = ? and password = ?;";
-
+    public final static String FindUser_SQL = "select ID from user where name = ?;";
+    public final static String loginTime = "INSERT INTO loginTime value (?,?);";
     public static Connection CONN = null;
     public static PreparedStatement PST = null;
     public static ResultSet RS = null;

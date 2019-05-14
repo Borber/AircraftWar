@@ -1,11 +1,25 @@
 package com.borber.toolkits;
 
+import javax.swing.*;
 import java.sql.SQLException;
 
 import static com.borber.globalConstant.For_SQL.*;
 
 public class SQL_Command {
 
+    public static boolean userCheck(String name){
+        try {
+            PST = CONN.prepareStatement(FindUser_SQL);
+            PST.setString(1,name);
+            RS = PST.executeQuery();
+            if(RS.next()){
+               return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     public static boolean SignUp(String name,String password,String email,String telephone,String country){
         int ID = 0;
         try {

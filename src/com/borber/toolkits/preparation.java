@@ -1,6 +1,7 @@
 package com.borber.toolkits;
 
 import com.borber.game.ui.gameFrame.GameFrameBeta;
+import com.borber.game.ui.gameFrame.GameStopedFrame;
 
 
 import static com.borber.globalConstant.For_Game.*;
@@ -13,7 +14,6 @@ public class preparation {
 
         CONN = new connectSQL().conSql();
 
-        // For Frame
-        gameFrameBeta = new GameFrameBeta();
+        gameStopedFrame = new GameStopedFrame();
     }
 }

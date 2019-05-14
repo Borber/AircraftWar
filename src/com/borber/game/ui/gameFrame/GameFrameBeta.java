@@ -3,8 +3,7 @@ package com.borber.game.ui.gameFrame;
 import java.awt.*;
 import java.awt.event.*;
 
-import static com.borber.globalConstant.For_Game.PLANE_OBJ;
-import static com.borber.globalConstant.For_Game.SCORE;
+import static com.borber.globalConstant.For_Game.*;
 import static com.borber.globalConstant.For_UI.*;
 
 /**
@@ -54,7 +53,7 @@ public class GameFrameBeta extends Frame {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseExited(MouseEvent e) {
-                new GameStopedFrame();
+                gameStopedFrame.setVisible(true);
             }
         });
         this.addMouseMotionListener(new MouseAdapter() {
@@ -69,7 +68,7 @@ public class GameFrameBeta extends Frame {
             public void mouseClicked(MouseEvent e) {
                 if(e.getButton() == MouseEvent.BUTTON3){
                     setVisible(false);
-                    new GameStopedFrame();
+                    gameStopedFrame.setVisible(true);
                 }
             }
         });

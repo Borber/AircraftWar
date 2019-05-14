@@ -4,6 +4,8 @@
 
 package com.borber.game.ui.gameFrame;
 
+import com.borber.game.ui.startFrame.StartFrame;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -19,6 +21,7 @@ public class GameStopedFrame extends JFrame {
     }
 
     private void restartButtonMouseClicked(MouseEvent e) {
+        setVisible(false);
         gameFrameBeta = new GameFrameBeta();
         gameFrameBeta.setVisible(true);
     }
@@ -29,7 +32,8 @@ public class GameStopedFrame extends JFrame {
     }
 
     private void exitButtonMouseClicked(MouseEvent e) {
-        System.exit(0);
+        setVisible(false);
+        new StartFrame();
     }
 
     private void initComponents() {
@@ -44,7 +48,6 @@ public class GameStopedFrame extends JFrame {
 
         //======== this ========
         setUndecorated(true);
-        setVisible(true);
         Container contentPane = getContentPane();
         contentPane.setLayout(null);
 

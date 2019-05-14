@@ -6,7 +6,6 @@ new FormModel {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
 			"undecorated": true
-			"visible": true
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "restartButton"
 				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "restartButtonMouseClicked", true ) )

@@ -26,6 +26,7 @@ public class StartFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
         background.requestFocus();
+        gameFrameBeta = new GameFrameBeta();
     }
 
     private void startLabelMouseClicked(MouseEvent e) {

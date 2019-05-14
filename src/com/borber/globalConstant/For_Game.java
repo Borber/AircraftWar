@@ -28,5 +28,6 @@ public class For_Game {
     public static BackGroundObj BG_ONE = new BackGroundObj(BG1_Y);
     public static BackGroundObj BG_TWO = new BackGroundObj(BG2_Y);
     public static GameFrameBeta gameFrameBeta = null;
+    public static GameStopedFrame gameStopedFrame = null;
 //    public static EnemyObj[] ENEMY_OBJ = new EnemyObj[6];
 }

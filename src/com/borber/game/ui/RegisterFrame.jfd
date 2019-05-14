@@ -35,6 +35,7 @@ new FormModel {
 				"font": new java.awt.Font( "Fira Code Medium", 1, 16 )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "passwordFieldFocusGained", true ) )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "passwordFieldFocusLost", true ) )
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyReleased", "passwordFieldKeyReleased", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 115
 				"y": 205
@@ -52,6 +53,7 @@ new FormModel {
 				"font": new java.awt.Font( "Fira Code Medium", 1, 16 )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusLost", "passwordRepeatFieldFocusLost", true ) )
 				addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "passwordRepeatFieldFocusGained", true ) )
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyReleased", "passwordRepeatFieldKeyReleased", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 250
 				"height": 30
@@ -362,6 +364,38 @@ new FormModel {
 				"height": 30
 				"y": 400
 				"x": 305
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "userSign"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/sign/red.png" )
+				"visible": false
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 380
+				"y": 147
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "userSign2"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/sign/green.png" )
+				"visible": false
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 380
+				"y": 148
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "passwordSign"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/sign/red.png" )
+				"visible": false
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 380
+				"y": 263
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "passwordSign2"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/sign/green.png" )
+				"visible": false
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 380
+				"y": 265
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "telephoneSign"
