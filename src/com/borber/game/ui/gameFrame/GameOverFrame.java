@@ -11,6 +11,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import static com.borber.globalConstant.For_Game.SCORE;
+import static com.borber.globalConstant.For_Game.gameFrameBeta;
 import static com.borber.globalConstant.For_SQL.SCORE_RANK;
 
 /**
@@ -33,6 +34,11 @@ public class GameOverFrame extends JFrame {
         System.exit(0);
     }
 
+    private void restartButtonImgMouseClicked(MouseEvent e) {
+        gameFrameBeta = new GameFrameBeta();
+        gameFrameBeta.setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         scoreLabel = new JLabel();
@@ -48,6 +54,7 @@ public class GameOverFrame extends JFrame {
         fourthSecore = new JLabel();
         Fifth = new JLabel();
         fifthSecore = new JLabel();
+        restartButtonImg = new JLabel();
         exitButtonImg = new JLabel();
         background = new JLabel();
 
@@ -154,6 +161,17 @@ public class GameOverFrame extends JFrame {
         contentPane.add(fifthSecore);
         fifthSecore.setBounds(225, 560, 155, 27);
 
+        //---- restartButtonImg ----
+        restartButtonImg.setIcon(new ImageIcon(getClass().getResource("/img/button/restart.png")));
+        restartButtonImg.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                restartButtonImgMouseClicked(e);
+            }
+        });
+        contentPane.add(restartButtonImg);
+        restartButtonImg.setBounds(new Rectangle(new Point(145, 655), restartButtonImg.getPreferredSize()));
+
         //---- exitButtonImg ----
         exitButtonImg.setIcon(new ImageIcon(getClass().getResource("/img/button/exitImg.png")));
         exitButtonImg.addMouseListener(new MouseAdapter() {
@@ -163,7 +181,7 @@ public class GameOverFrame extends JFrame {
             }
         });
         contentPane.add(exitButtonImg);
-        exitButtonImg.setBounds(new Rectangle(new Point(145, 760), exitButtonImg.getPreferredSize()));
+        exitButtonImg.setBounds(new Rectangle(new Point(145, 755), exitButtonImg.getPreferredSize()));
 
         //---- background ----
         background.setIcon(new ImageIcon(getClass().getResource("/img/bg.png")));
@@ -202,6 +220,7 @@ public class GameOverFrame extends JFrame {
     private JLabel fourthSecore;
     private JLabel Fifth;
     private JLabel fifthSecore;
+    private JLabel restartButtonImg;
     private JLabel exitButtonImg;
     private JLabel background;
     // JFormDesigner - End of variables declaration  //GEN-END:variables

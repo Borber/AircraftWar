@@ -138,7 +138,12 @@ public class RegisterFrame extends JFrame {
     }
 
     private void submitButtonImgMouseClicked(MouseEvent e) {
+        if(!userOK){
 
+        }
+        if(!passOK){
+
+        }
         boolean OK = SQL_Command.SignUp(
                 nameTextField.getText(),
                 new String(passwordField.getPassword()),
