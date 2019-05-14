@@ -12,8 +12,8 @@ public class ObjFather {
     }
 
     public void dieSelf(){
-        x = 0;
-        y = 0;
+        x = -200;
+        y = -200;
         speed = 0;
         width = 0;
         height = 0;

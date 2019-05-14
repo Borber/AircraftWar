@@ -8,8 +8,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.borber.globalConstant.For_Game.lastLoginTime;
-import static com.borber.globalConstant.For_Game.userID;
+import static com.borber.globalConstant.For_Game.*;
 import static com.borber.globalConstant.For_SQL.*;
 
 public class SQL_Command {
@@ -94,4 +93,31 @@ public class SQL_Command {
         return false;
     }
 
+    public static boolean scoreUp(){
+        try {
+            PST = CONN.prepareStatement(scoreUpdate);
+            PST.setInt(1,userID);
+            PST.setInt(2,SCORE);
+            int n = PST.executeUpdate();
+            if(n > 0){
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public static boolean Global_Ranking(){
+        try {
+            PST = CONN.prepareStatement(GLOBAL_RANK);
+            RS = PST.executeQuery();
+            int i = 0;
+            while (RS.next()){
+                SCORE_RANK[i++] = ""+RS.getInt(2) + "("+RS.getString(1)+")";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

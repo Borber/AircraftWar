@@ -5,9 +5,159 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
+			"undecorated": true
+			"visible": true
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "scoreLabel"
+				"text": "SCORE"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 28 )
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 190
+				"y": 155
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "score"
+				"text": "text"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 48 )
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 140
+				"y": 240
+				"width": 191
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "Global_Rank"
+				"text": "Global Rank"
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 20 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 180
+				"y": 345
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "First"
+				"text": "First"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 18 )
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 165
+				"y": 395
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "firstScore"
+				"text": "text"
+				"foreground": &Color0 new java.awt.Color( 255, 255, 255, 255 )
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 20 )
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 225
+				"y": 395
+				"width": 155
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "Second"
+				"text": "Second"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 16 )
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 145
+				"y": 450
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "secondScore"
+				"text": "text"
+				"foreground": #Color0
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 18 )
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 155
+				"height": 27
+				"x": 225
+				"y": 445
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "Third"
+				"text": "Third"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 14 )
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 165
+				"y": 490
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "thirdSecond"
+				"text": "text"
+				"foreground": #Color0
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 16 )
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 155
+				"height": 27
+				"x": 225
+				"y": 485
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "Fourth"
+				"text": "Fourth"
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 12 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 160
+				"y": 530
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "fourthSecore"
+				"text": "text"
+				"foreground": #Color0
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 12 )
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 155
+				"height": 27
+				"x": 225
+				"y": 525
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "Fifth"
+				"text": "Fifth"
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 12 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 175
+				"y": 565
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "fifthSecore"
+				"text": "text"
+				"foreground": #Color0
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 10 )
+				"horizontalAlignment": 0
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 155
+				"height": 27
+				"x": 225
+				"y": 560
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "exitButtonImg"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/exitImg.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "exitButtonImgMouseClicked", true ) )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 145
+				"y": 760
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "background"
+				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/bg.png" )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 0
+				"y": 0
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"size": new java.awt.Dimension( 480, 885 )
 		} )
 	}
 }

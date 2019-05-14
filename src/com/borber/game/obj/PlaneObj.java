@@ -14,6 +14,8 @@ public class PlaneObj extends ObjFather{
         super();
         x = 200;
         y = 600;
+        width = 100;
+        height = 100;
         body = PLANE_ONE;
         life = 3;
         level = 1;

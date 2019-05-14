@@ -1,5 +1,10 @@
 package com.borber.game.ui.gameFrame;
 
+import com.borber.game.obj.BulletObj;
+import com.borber.game.obj.EnemyOne;
+import com.borber.game.obj.EnemyThree;
+import com.borber.game.obj.EnemyTwo;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -15,7 +20,16 @@ public class GameFrameBeta extends Frame {
 
     public GameFrameBeta(){
         SCORE = 0;
+        TIME = 0;
         PLANE_OBJ.setLife(3);
+        ENEMY_ONE_SGIN = new boolean[EnemyN];
+        ENEMY_ONE_OBJ = new EnemyOne[EnemyN];
+        ENEMY_TWO_SGIN = new boolean[EnemyN];
+        ENEMY_TWO_OBJ = new EnemyTwo[EnemyN];
+        ENEMY_THREE_SGIN = new boolean[EnemyN];
+        ENEMY_THREE_OBJ = new EnemyThree[EnemyN];
+        BULLET_SIGN = new boolean[BULLETN];
+        BULLET_OBJ = new BulletObj[BULLETN];
         initComponents();
     }
 
@@ -27,6 +41,7 @@ public class GameFrameBeta extends Frame {
         DrawItems.drawScore(g);
         DrawItems.drawEnemy(g);
         DrawItems.drawBullet(g);
+        DrawItems.KILL();
     }
     class PrintThread extends Thread {
         @Override
@@ -39,6 +54,7 @@ public class GameFrameBeta extends Frame {
                     e.printStackTrace();
                 }
             }
+            new GameOverFrame();
         }
     }
 
@@ -49,15 +65,10 @@ public class GameFrameBeta extends Frame {
         setLocationRelativeTo(getOwner());
         listeners();
         new PrintThread().start();
+
     }
 
     private void listeners(){
-        this.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseExited(MouseEvent e) {
-                gameStopedFrame.setVisible(true);
-            }
-        });
         this.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseMoved(MouseEvent e) {
