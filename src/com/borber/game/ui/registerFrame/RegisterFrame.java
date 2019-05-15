@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Mon May 13 08:04:11 CST 2019
  */
 
-package com.borber.game.ui;
+package com.borber.game.ui.registerFrame;
 
 import com.borber.game.ui.startFrame.StartFrame;
 import com.borber.globalConstant.For_UI;
@@ -15,6 +15,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
 import javax.swing.*;
+
+import static com.borber.globalConstant.For_UI.HINT_TEXT;
 
 /**
  * @author BORBER
@@ -32,7 +34,7 @@ public class RegisterFrame extends JFrame {
     }
 
     private void nameTextFieldFocusGained(FocusEvent e) {
-        if(nameTextField.getText().equals(For_UI.HINT_TEXT)){
+        if(nameTextField.getText().equals(HINT_TEXT)){
             nameTextField.setDocument(new JTextFieldLimit(12));
             nameTextField.setText("");
             nameTextField.setForeground(Color.BLACK);
@@ -43,14 +45,16 @@ public class RegisterFrame extends JFrame {
 
     private void nameTextFieldFocusLost(FocusEvent e) {
         if(nameTextField.getText().length() == 0){
-            nameTextField.setText(For_UI.HINT_TEXT);
+            nameTextField.setText(HINT_TEXT);
             nameTextField.setForeground(new Color(153, 153, 153));
         }
-        userOK = SQL_Command.userCheck(nameTextField.getText());
-        if(userOK){
-            userSign.setVisible(true);
-        }else {
-            userSign2.setVisible(true);
+        if(!nameTextField.getText().equals(HINT_TEXT)){
+            userOK = SQL_Command.userCheck(nameTextField.getText());
+            if(userOK){
+                userSign.setVisible(true);
+            }else {
+                userSign2.setVisible(true);
+            }
         }
     }
 
@@ -138,23 +142,41 @@ public class RegisterFrame extends JFrame {
     }
 
     private void submitButtonImgMouseClicked(MouseEvent e) {
-        if(!userOK){
-
+        boolean OK = true;
+        boolean SUCCESS = false;
+        if(OK && userOK){
+            setVisible(false);
+            new registerFial("Duplicate name");
+            OK = false;
         }
-        if(!passOK){
-
+        if(OK && !passOK){
+            setVisible(false);
+            OK = false;
+            new registerFial("Two passwords do not match");
         }
-        boolean OK = SQL_Command.SignUp(
-                nameTextField.getText(),
-                new String(passwordField.getPassword()),
-                emailTextField.getText() + "@" + emailCombox.getSelectedItem().toString(),
-                telephoneNum1.getText() + telephoneNum2.getText() + telephoneNum3.getText(),
-                conCombox.getSelectedItem().toString()
-                );
-        if(OK){
-            System.out.println("注册成功");
-        }else {
-            System.out.println("注册失败");
+        if(OK && emailTextField.getText().length() < 3){
+            setVisible(false);
+            OK = false;
+            new registerFial("Please enter your real email");
+        }
+        if(OK && telephoneNum1.getText().length() != 3 || telephoneNum2.getText().length() != 4 || telephoneNum3.getText().length() != 4){
+            setVisible(false);
+            OK = false;
+            new registerFial("Please check your phone number");
+        }
+                if(OK){
+                    SUCCESS = SQL_Command.SignUp(
+                            nameTextField.getText(),
+                            new String(passwordField.getPassword()),
+                            emailTextField.getText() + "@" + emailCombox.getSelectedItem().toString(),
+                            telephoneNum1.getText() + telephoneNum2.getText() + telephoneNum3.getText(),
+                            conCombox.getSelectedItem().toString()
+                    );
+                }
+
+        if(SUCCESS && OK){
+            setVisible(false);
+            new registrationSuccess();
         }
     }
 
@@ -168,6 +190,9 @@ public class RegisterFrame extends JFrame {
         passOK = Arrays.equals(passwordField.getPassword(), passwordRepeatField.getPassword());
         if(! new String(passwordField.getPassword()).equals(For_UI.HINT_PASSWORD_TEXT) &&
                 ! new String(passwordRepeatField.getPassword()).equals(For_UI.HINT_PASSWORD_TEXT)){
+            if(new String(passwordField.getPassword()).length() < 6){
+                passOK = false;
+            }
             if(passOK){
                 passwordSign2.setVisible(true);
                 passwordSign.setVisible(false);
@@ -175,8 +200,9 @@ public class RegisterFrame extends JFrame {
                 passwordSign.setVisible(true);
                 passwordSign2.setVisible(false);
             }
+        }else {
+            passOK = false;
         }
-
     }
 
     private void passwordFieldKeyReleased(KeyEvent e) {
@@ -212,7 +238,6 @@ public class RegisterFrame extends JFrame {
 
         //======== this ========
         setUndecorated(true);
-        setVisible(true);
         Container contentPane = getContentPane();
         contentPane.setLayout(null);
 

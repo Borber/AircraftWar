@@ -12,7 +12,7 @@ public class EnemyOne extends ObjFather{
         die = false;
         y = -30;
         speed = 6;
-        width = 40;
+        width = 50;
         height = 40;
         life = 2;
         body = ENEMY_LEVEL1;

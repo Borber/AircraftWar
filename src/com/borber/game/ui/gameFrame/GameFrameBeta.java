@@ -54,6 +54,7 @@ public class GameFrameBeta extends Frame {
                     e.printStackTrace();
                 }
             }
+            setVisible(false);
             new GameOverFrame();
         }
     }

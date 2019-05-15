@@ -6,7 +6,6 @@ new FormModel {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
 			"undecorated": true
-			"visible": true
 			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
 				name: "nameTextField"
 				"border": sfield com.jformdesigner.model.FormObject NULL_VALUE

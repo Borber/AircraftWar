@@ -1,10 +1,9 @@
 package com.borber.globalConstant;
 
 import com.borber.game.obj.*;
-import com.borber.game.ui.RegisterFrame;
 import com.borber.game.ui.gameFrame.GameFrameBeta;
 import com.borber.game.ui.gameFrame.GameStopedFrame;
-import com.borber.game.ui.startFrame.StartFrame;
+import com.borber.game.ui.registerFrame.RegisterFrame;
 import com.borber.toolkits.GameUtil;
 
 import java.awt.*;
@@ -37,6 +36,7 @@ public class For_Game {
     public static BackGroundObj BG_TWO = new BackGroundObj(BG2_Y);
     public static GameFrameBeta gameFrameBeta = null;
     public static GameStopedFrame gameStopedFrame = null;
+    public static RegisterFrame registerFrame = null;
 
     public static int EnemyN = 6;
     public static boolean[] ENEMY_ONE_SGIN = new boolean[EnemyN];
@@ -47,7 +47,7 @@ public class For_Game {
     public static EnemyThree[] ENEMY_THREE_OBJ = new EnemyThree[EnemyN];
 
     public static int BULLETN = 30;
-    public static int BULLETSPEED = 20;
+    public static int BULLETSPEED = 25;
     public static boolean[] BULLET_SIGN = new boolean[BULLETN];
     public static BulletObj[] BULLET_OBJ = new BulletObj[BULLETN];
 }

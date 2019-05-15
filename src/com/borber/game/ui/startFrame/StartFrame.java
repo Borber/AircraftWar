@@ -4,7 +4,7 @@
 
 package com.borber.game.ui.startFrame;
 
-import com.borber.game.ui.RegisterFrame;
+import com.borber.game.ui.registerFrame.RegisterFrame;
 import com.borber.game.ui.gameFrame.GameFrameBeta;
 import com.borber.globalConstant.For_UI;
 import com.borber.toolkits.SQL_Command;
@@ -16,8 +16,7 @@ import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import static com.borber.globalConstant.For_Game.gameFrameBeta;
-import static com.borber.globalConstant.For_Game.lastLoginTime;
+import static com.borber.globalConstant.For_Game.*;
 
 /**
  * @author BORBER
@@ -38,7 +37,8 @@ public class StartFrame extends JFrame {
             System.out.println(lastLoginTime);
             setVisible(false);
         }else {
-            System.out.println("登陆失败");
+            setVisible(false);
+            new loginFail();
         }
     }
 
@@ -80,7 +80,7 @@ public class StartFrame extends JFrame {
 
     private void registerButtonImgMouseClicked(MouseEvent e) {
         setVisible(false);
-        new RegisterFrame();
+        registerFrame.setVisible(true);
     }
 
     private void initComponents() {

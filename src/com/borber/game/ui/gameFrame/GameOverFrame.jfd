@@ -19,13 +19,13 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "score"
 				"text": "text"
-				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 48 )
+				"font": new java.awt.Font( "Microsoft YaHei UI", 3, 48 )
 				"foreground": new java.awt.Color( 255, 255, 255, 255 )
 				"horizontalAlignment": 0
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"x": 140
+				"x": 120
 				"y": 240
-				"width": 191
+				"width": 241
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "Global_Rank"

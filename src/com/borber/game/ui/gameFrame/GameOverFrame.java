@@ -73,11 +73,11 @@ public class GameOverFrame extends JFrame {
 
         //---- score ----
         score.setText("text");
-        score.setFont(new Font("Microsoft YaHei UI", Font.BOLD, 48));
+        score.setFont(new Font("Microsoft YaHei UI", Font.BOLD | Font.ITALIC, 48));
         score.setForeground(Color.white);
         score.setHorizontalAlignment(SwingConstants.CENTER);
         contentPane.add(score);
-        score.setBounds(140, 240, 191, score.getPreferredSize().height);
+        score.setBounds(120, 240, 241, score.getPreferredSize().height);
 
         //---- Global_Rank ----
         Global_Rank.setText("Global Rank");

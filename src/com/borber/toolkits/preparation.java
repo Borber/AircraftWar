@@ -2,6 +2,7 @@ package com.borber.toolkits;
 
 import com.borber.game.ui.gameFrame.GameFrameBeta;
 import com.borber.game.ui.gameFrame.GameStopedFrame;
+import com.borber.game.ui.registerFrame.RegisterFrame;
 
 
 import static com.borber.globalConstant.For_Game.*;
@@ -15,5 +16,6 @@ public class preparation {
         CONN = new connectSQL().conSql();
 
         gameStopedFrame = new GameStopedFrame();
+        registerFrame = new RegisterFrame();
     }
 }
