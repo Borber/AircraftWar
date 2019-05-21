@@ -1,6 +1,7 @@
 package com.borber.globalConstant;
 
 import com.borber.game.obj.*;
+import com.borber.game.ui.adminFrame.Adminframe;
 import com.borber.game.ui.gameFrame.GameFrameBeta;
 import com.borber.game.ui.gameFrame.GameStopedFrame;
 import com.borber.game.ui.registerFrame.RegisterFrame;
@@ -27,7 +28,9 @@ public class For_Game {
      */
 
     public static int userID = 0;
+    public static int adminID = 0;
     public static String lastLoginTime = null;
+    public static String adminLastLoginTime = null;
 
 
     public static int TIME = 0;
@@ -37,6 +40,7 @@ public class For_Game {
     public static GameFrameBeta gameFrameBeta = null;
     public static GameStopedFrame gameStopedFrame = null;
     public static RegisterFrame registerFrame = null;
+    public static Adminframe adminframe = null;
 
     public static int EnemyN = 6;
     public static boolean[] ENEMY_ONE_SGIN = new boolean[EnemyN];

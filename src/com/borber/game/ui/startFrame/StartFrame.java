@@ -4,6 +4,7 @@
 
 package com.borber.game.ui.startFrame;
 
+import com.borber.game.ui.adminFrame.Adminframe;
 import com.borber.game.ui.registerFrame.RegisterFrame;
 import com.borber.game.ui.gameFrame.GameFrameBeta;
 import com.borber.globalConstant.For_UI;
@@ -17,6 +18,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import static com.borber.globalConstant.For_Game.*;
+import static com.borber.globalConstant.For_SQL.Admin_SignIn_SQL;
+import static com.borber.globalConstant.For_SQL.SignIn_SQL;
 
 /**
  * @author BORBER
@@ -31,7 +34,7 @@ public class StartFrame extends JFrame {
 
     private void startLabelMouseClicked(MouseEvent e) {
         boolean OK = false;
-        OK = SQL_Command.SignIn(nameTextField.getText(),new String(passwordField.getPassword()));
+        OK = SQL_Command.SignIn(nameTextField.getText(),new String(passwordField.getPassword()),SignIn_SQL);
         if(OK){
             gameFrameBeta.setVisible(true);
             System.out.println(lastLoginTime);
@@ -83,9 +86,26 @@ public class StartFrame extends JFrame {
         registerFrame.setVisible(true);
     }
 
+    private void adminLoginImgMouseClicked(MouseEvent e) {
+        setVisible(false);
+        boolean OK = SQL_Command.Admin_SignIn(nameTextField.getText(),new String(passwordField.getPassword()),Admin_SignIn_SQL);
+        if(OK){
+            adminframe = new Adminframe();
+        }else{
+            new loginFail();
+        }
+    }
+
+    private void authorButtonMouseClicked(MouseEvent e) {
+        setVisible(false);
+        new MembersIntroduction();
+
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         formattedTextField1 = new JFormattedTextField();
+        label1 = new JLabel();
         startLabel = new JLabel();
         nameTextField = new JFormattedTextField();
         passwordField = new JPasswordField();
@@ -104,6 +124,13 @@ public class StartFrame extends JFrame {
         contentPane.setLayout(null);
         contentPane.add(formattedTextField1);
         formattedTextField1.setBounds(225, 30, 0, 0);
+
+        //---- label1 ----
+        label1.setText("Aircraft War");
+        label1.setForeground(Color.white);
+        label1.setFont(new Font("Microsoft YaHei UI", Font.BOLD, 48));
+        contentPane.add(label1);
+        label1.setBounds(new Rectangle(new Point(100, 100), label1.getPreferredSize()));
 
         //---- startLabel ----
         startLabel.setIcon(new ImageIcon(getClass().getResource("/img/button/stratImg.png")));
@@ -190,12 +217,24 @@ public class StartFrame extends JFrame {
 
         //---- adminLoginImg ----
         adminLoginImg.setIcon(new ImageIcon(getClass().getResource("/img/button/admin.png")));
+        adminLoginImg.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                adminLoginImgMouseClicked(e);
+            }
+        });
         contentPane.add(adminLoginImg);
         adminLoginImg.setBounds(new Rectangle(new Point(30, 770), adminLoginImg.getPreferredSize()));
 
         //---- authorButton ----
         authorButton.setIcon(new ImageIcon(getClass().getResource("/img/pre/author.png")));
         authorButton.setDisabledIcon(new ImageIcon(getClass().getResource("/img/pre/author.png")));
+        authorButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                authorButtonMouseClicked(e);
+            }
+        });
         contentPane.add(authorButton);
         authorButton.setBounds(new Rectangle(new Point(410, 775), authorButton.getPreferredSize()));
 
@@ -232,6 +271,7 @@ public class StartFrame extends JFrame {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JFormattedTextField formattedTextField1;
+    private JLabel label1;
     private JLabel startLabel;
     private JFormattedTextField nameTextField;
     private JPasswordField passwordField;

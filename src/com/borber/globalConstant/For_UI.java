@@ -2,6 +2,7 @@ package com.borber.globalConstant;
 
 import com.borber.toolkits.GameUtil;
 
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -14,4 +15,6 @@ public class For_UI {
     public final static int GAME_WIDTH = 480;
     public final static int GAME_HEIGHT = 852;
     public final static Image BACK_GROUND = GameUtil.getImage("img/bg.png");
+
+
 }

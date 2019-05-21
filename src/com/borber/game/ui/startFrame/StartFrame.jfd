@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "7.0.0.0.170" Java: "1.8.0_202-release" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.0.0.194" Java: "1.8.0_202-release" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -14,6 +14,15 @@ new FormModel {
 				"y": 30
 				"width": 0
 				"height": 0
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Aircraft War"
+				"foreground": new java.awt.Color( 255, 255, 255, 255 )
+				"font": new java.awt.Font( "Microsoft YaHei UI", 1, 48 )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 100
+				"y": 100
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "startLabel"
@@ -88,6 +97,7 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "adminLoginImg"
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/button/admin.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "adminLoginImgMouseClicked", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 30
 				"y": 770
@@ -96,6 +106,7 @@ new FormModel {
 				name: "authorButton"
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/pre/author.png" )
 				"disabledIcon": new com.jformdesigner.model.SwingIcon( 0, "/img/pre/author.png" )
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "authorButtonMouseClicked", true ) )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"x": 410
 				"y": 775
