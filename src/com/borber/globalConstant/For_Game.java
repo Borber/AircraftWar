@@ -54,4 +54,7 @@ public class For_Game {
     public static int BULLETSPEED = 25;
     public static boolean[] BULLET_SIGN = new boolean[BULLETN];
     public static BulletObj[] BULLET_OBJ = new BulletObj[BULLETN];
+
+    public final static String hurt = "src/BGM/hurt.wav";
+    public final static String dieBGM = "src/BGM/die.wav";
 }

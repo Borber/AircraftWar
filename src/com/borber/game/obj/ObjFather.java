@@ -1,7 +1,11 @@
 package com.borber.game.obj;
 
+import com.borber.toolkits.PlayMusic;
+
 import java.awt.*;
 import java.util.Random;
+
+import static com.borber.globalConstant.For_Game.hurt;
 
 public class ObjFather {
     int x,y,speed,width,height,life,level;

@@ -80,7 +80,7 @@ public class SQL_Command {
                 if (RS.next()) {
                     lastLoginTime = RS.getString(1);
                 }
-                loginTime(loginTime_SQL,adminID);
+                loginTime(loginTime_SQL,userID);
                 return true;
             }
         } catch (SQLException e) {

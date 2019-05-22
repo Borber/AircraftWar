@@ -1,5 +1,7 @@
 package com.borber.game.obj;
 
+import com.borber.toolkits.PlayMusic;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -32,6 +34,17 @@ public class PlaneObj extends ObjFather{
                 body = PLANE_ONE;
             }
             flash = 0;
+        }
+    }
+
+    @Override
+    public void setLife(int life) {
+        super.setLife(life);
+        if(PLANE_OBJ.getLife() == 2 || PLANE_OBJ.getLife() == 1){
+            PlayMusic.play(hurt);
+        }
+        if(PLANE_OBJ.getLife() == 0){
+            PlayMusic.play(dieBGM);
         }
     }
 }

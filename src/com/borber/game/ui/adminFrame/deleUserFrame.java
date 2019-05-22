@@ -26,16 +26,22 @@ public class deleUserFrame extends JFrame {
         adminframe.setVisible(true);
     }
 
+    private void CancelMouseClicked(MouseEvent e) {
+        setVisible(false);
+        adminframe.setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         ID = new JLabel();
         deleID = new JFormattedTextField();
         deleButtonImg = new JLabel();
+        Cancel = new JLabel();
         background = new JLabel();
 
         //======== this ========
-        setVisible(true);
         setUndecorated(true);
+        setVisible(true);
         Container contentPane = getContentPane();
         contentPane.setLayout(null);
 
@@ -62,7 +68,18 @@ public class deleUserFrame extends JFrame {
             }
         });
         contentPane.add(deleButtonImg);
-        deleButtonImg.setBounds(new Rectangle(new Point(155, 210), deleButtonImg.getPreferredSize()));
+        deleButtonImg.setBounds(new Rectangle(new Point(30, 215), deleButtonImg.getPreferredSize()));
+
+        //---- Cancel ----
+        Cancel.setIcon(new ImageIcon(getClass().getResource("/img/button/cancelImg.png")));
+        Cancel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                CancelMouseClicked(e);
+            }
+        });
+        contentPane.add(Cancel);
+        Cancel.setBounds(new Rectangle(new Point(265, 210), Cancel.getPreferredSize()));
 
         //---- background ----
         background.setIcon(new ImageIcon(getClass().getResource("/img/massg.png")));
@@ -91,6 +108,7 @@ public class deleUserFrame extends JFrame {
     private JLabel ID;
     private JFormattedTextField deleID;
     private JLabel deleButtonImg;
+    private JLabel Cancel;
     private JLabel background;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

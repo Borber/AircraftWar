@@ -5,8 +5,8 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
-			"visible": true
 			"undecorated": true
+			"visible": true
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "ljh"
 				"icon": new com.jformdesigner.model.SwingIcon( 0, "/img/us/Ljh.png" )

@@ -35,8 +35,8 @@ public class MembersIntroduction extends JFrame {
         bsckground = new JLabel();
 
         //======== this ========
-        setVisible(true);
         setUndecorated(true);
+        setVisible(true);
         Container contentPane = getContentPane();
         contentPane.setLayout(null);
 
