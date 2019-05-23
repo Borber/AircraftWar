@@ -3,12 +3,13 @@ package com.borber.globalConstant;
 import com.borber.game.obj.*;
 import com.borber.game.ui.adminFrame.Adminframe;
 import com.borber.game.ui.gameFrame.GameFrameBeta;
-import com.borber.game.ui.gameFrame.GameOverFrame;
 import com.borber.game.ui.gameFrame.GameStopedFrame;
 import com.borber.game.ui.registerFrame.RegisterFrame;
 import com.borber.toolkits.GameUtil;
 
+
 import java.awt.*;
+import java.net.URL;
 
 import static com.borber.globalConstant.For_UI.GAME_HEIGHT;
 
@@ -56,6 +57,6 @@ public class For_Game {
     public static boolean[] BULLET_SIGN = new boolean[BULLETN];
     public static BulletObj[] BULLET_OBJ = new BulletObj[BULLETN];
 
-    public final static String hurt = "src/BGM/hurt.wav";
-    public final static String dieBGM = "src/BGM/die.wav";
+    public static String hurt = null;
+    public static String dieBGM = null;
 }
