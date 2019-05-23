@@ -82,7 +82,7 @@ public class MembersIntroduction extends JFrame {
         BORBER.setBounds(new Rectangle(new Point(490, 375), BORBER.getPreferredSize()));
 
         //---- Spring ----
-        Spring.setText("Spring");
+        Spring.setText("Springer");
         Spring.setForeground(new Color(255, 153, 51));
         Spring.setFont(new Font("Microsoft YaHei UI", Font.BOLD, 20));
         contentPane.add(Spring);
