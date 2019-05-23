@@ -3,6 +3,7 @@ package com.borber.globalConstant;
 import com.borber.game.obj.*;
 import com.borber.game.ui.adminFrame.Adminframe;
 import com.borber.game.ui.gameFrame.GameFrameBeta;
+import com.borber.game.ui.gameFrame.GameOverFrame;
 import com.borber.game.ui.gameFrame.GameStopedFrame;
 import com.borber.game.ui.registerFrame.RegisterFrame;
 import com.borber.toolkits.GameUtil;

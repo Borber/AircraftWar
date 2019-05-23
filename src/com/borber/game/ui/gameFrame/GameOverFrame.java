@@ -35,6 +35,7 @@ public class GameOverFrame extends JFrame {
     }
 
     private void restartButtonImgMouseClicked(MouseEvent e) {
+        setVisible(false);
         gameFrameBeta = new GameFrameBeta();
         gameFrameBeta.setVisible(true);
     }
